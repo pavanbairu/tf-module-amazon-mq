@@ -10,10 +10,11 @@ resource "aws_security_group" "main" {
     protocol    = "tcp"
     cidr_blocks = var.allow_db_cidr
   }
+
   ingress {
-    description = "RABBITMQ"
-    from_port   = var.port_number
-    to_port     = var.port_number
+    description = "SSH"
+    from_port   = 22
+    to_port     = 22
     protocol    = "tcp"
     cidr_blocks = var.bastion_cidr
   }
